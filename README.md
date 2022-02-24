@@ -12,3 +12,4 @@
 - HTML
 - CSS
 - JavaScript
+- svg графика
