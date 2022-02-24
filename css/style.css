@@ -89,7 +89,7 @@ body {
   display: inline-block;
   position: absolute;
   left: 10px;
-  top: 15px;
+  top: 8px;
   bottom: 0;
 }
 .icon-arrow:hover {
@@ -100,7 +100,7 @@ body {
   color: #3a7bfd;
   position: absolute;
   right: 10px;
-  top: 15px;
+  top: 8px;
   bottom: 0px;
 }
 .icon-delete:hover {
