@@ -91,6 +91,7 @@ body {
   left: 10px;
   top: 8px;
   bottom: 0;
+  cursor: pointer;
 }
 .icon-arrow:hover {
   color: #00c78b;
@@ -102,6 +103,7 @@ body {
   right: 10px;
   top: 8px;
   bottom: 0px;
+  cursor: grab;
 }
 .icon-delete:hover {
   color: #f3477a;
@@ -111,6 +113,7 @@ body {
   position: absolute;
   top: 14px;
   right: 18px;
+  cursor: pointer;
 }
 .icon-trash:hover {
   color: #f3477a;
@@ -122,6 +125,7 @@ body {
   background-color: #fff;
   padding: 10px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 .input:focus-visible {
   outline: none;
