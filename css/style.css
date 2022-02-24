@@ -93,7 +93,7 @@ body {
   bottom: 0;
 }
 .icon-arrow:hover {
-  color: #f3477a;
+  color: #00c78b;
   transform: rotate(87deg);
 }
 .icon-delete {
@@ -166,15 +166,15 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
 }
-li.finish div.text {
+li.ready div.text {
   text-decoration: line-through;
   color: #ccc;
 }
-li.finish .icon-arrow {
+li.ready .icon-arrow {
   transform: rotate(87deg);
   color: #ccc;
 }
-li.finish .icon-arrow:hover {
+li.ready .icon-arrow:hover {
   transform: rotate(0deg);
-  color: #00c78b;
+  color: #f3477a;
 }

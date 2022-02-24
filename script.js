@@ -4,10 +4,12 @@ console.log("Приложение cписок Todo ЗАПУЩЕННО,", nowDate
 let taskElem = document.getElementById("add-task"); // Форма добавления новой задачи
 let iconAdd = document.getElementById("icon-add"); // Иконка кнопки добавить новую задачу
 let itemList = document.getElementById("list"); // Список ul задач
+let iconArrow = document.getElementsByClassName("icon-arrow"); // Иконка кнопки добавить новую задачу
 
 taskElem.addEventListener("submit", addTask); // событие по submit (подтвердить новую задачу)
 iconAdd.addEventListener("click", addTask); //  событие по кнопке добавить новую задачу
 itemList.addEventListener("click", removeTask); // событие удалить задачу
+itemList.addEventListener("click", setReady); // событие сделать задачу выполненной
 
 // Функция добавления новой задачи в список
 function addTask(e) {
@@ -38,6 +40,7 @@ function addElemHTML(taskText) {
   svgArrow.setAttribute("viewBox", "0 0 21 21");
   svgArrow.setAttribute("width", "21");
   svgArrow.setAttribute("height", "21");
+  svgArrow.dataset.action = "ready";
   useArrow.setAttributeNS(xlinkns, "href", "#arrow_1");
   svgArrow.appendChild(useArrow);
   newElement.appendChild(svgArrow);
@@ -66,5 +69,16 @@ function removeTask(e) {
     if (confirm(`Удалить задачу: ${taskName}?`)) {
       e.target.parentNode.remove();
     }
+  }
+}
+
+// Функция которая помечает задачу как выполненна
+function setReady(e) {
+  if (
+    e.target.hasAttribute("data-action") &&
+    e.target.getAttribute("data-action") == "ready"
+  ) {
+    let name = e.target.parentNode.classList.toggle("ready");
+    console.log(name);
   }
 }
