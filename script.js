@@ -1,15 +1,19 @@
 var nowDate = new Date();
 console.log("Приложение cписок Todo ЗАПУЩЕННО,", nowDate.toString());
 
+let tasks = []; // Массив для хранения данных о задачах
 let taskElem = document.getElementById("add-task"); // Форма добавления новой задачи
 let iconAdd = document.getElementById("icon-add"); // Иконка кнопки добавить новую задачу
 let itemList = document.getElementById("list"); // Список ul задач
 let iconArrow = document.getElementsByClassName("icon-arrow"); // Иконка кнопки добавить новую задачу
+const storage = localStorage.getItem("toDoApp"); // Получение значения localStorage для key = toDoApp (тип данных Json)
+let clearList = document.getElementById("trash"); // Иконка кнопки очистить список задач
 
 taskElem.addEventListener("submit", addTask); // событие по submit (подтвердить новую задачу)
 iconAdd.addEventListener("click", addTask); //  событие по кнопке добавить новую задачу
 itemList.addEventListener("click", removeTask); // событие удалить задачу
 itemList.addEventListener("click", setReady); // событие сделать задачу выполненной
+clearList.addEventListener("click", clearTasks); // событие сделать задачу выполненной
 
 // Функция добавления новой задачи в список
 function addTask(e) {
@@ -19,6 +23,8 @@ function addTask(e) {
 
   if (newElemInput) {
     addElemHTML(newElemInput);
+    tasks.push(newElemInput);
+    resaveStorage(tasks);
   }
   newTaskInput.value = "";
 }
@@ -58,7 +64,7 @@ function addElemHTML(taskText) {
   itemList.prepend(newElement);
 }
 
-// Функция удаления задачи
+// Функция удаления задачи из списка
 function removeTask(e) {
   if (
     e.target.hasAttribute("data-action") &&
@@ -68,11 +74,14 @@ function removeTask(e) {
 
     if (confirm(`Удалить задачу: ${taskName}?`)) {
       e.target.parentNode.remove();
+      let indexTask = tasks.findIndex((i) => i == taskName);
+      tasks.splice(indexTask, 1);
+      resaveStorage(tasks);
     }
   }
 }
 
-// Функция которая помечает задачу как выполненна
+// Функция которая делает задачу выполненной
 function setReady(e) {
   if (
     e.target.hasAttribute("data-action") &&
@@ -81,4 +90,26 @@ function setReady(e) {
     let name = e.target.parentNode.classList.toggle("ready");
     console.log(name);
   }
+}
+
+// функция перезаписи localStorage
+function resaveStorage(tasks) {
+  // устанавливаем localStorage для key = toDoApp (тип данных JSON от массива)
+  localStorage.setItem("toDoApp", JSON.stringify(tasks));
+}
+
+// функция очищения списка задач
+function clearTasks() {
+  tasks = [];
+  localStorage.clear();
+  // location.reload();
+  while (itemList.firstChild) {
+    itemList.removeChild(itemList.firstChild);
+  }
+}
+
+// выводим список задач если они есть в localStorage
+if (storage) {
+  tasks = JSON.parse(storage);
+  tasks.forEach((value) => addElemHTML(value));
 }
