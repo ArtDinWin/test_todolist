@@ -9,7 +9,136 @@
     <link rel="stylesheet" href="./css/normalize.css">
 </head>
 <body>
-    <h1>Приложение cписок Todo</h1>
+    <div class="container">
+        <h2 id="title">
+            Приложение To Do List
+        </h2>
+        <div class="container-app">
+            <div class="header">
+                <div class="trash">
+                    <svg class="icon-trash" viewBox="0 0 21 21" width="21px" height="21px">
+                        <use xlink:href="#trash_1" />
+                    </svg>
+                </div>
+                <div id="date"></div>
+            </div>
+            <div class="content">
+                <ul id="list">
+                    <li class="task">
+                        <svg class="icon-arrow" viewBox="0 0 21 21" width="21px" height="21px">
+                            <use xlink:href="#arrow_1" />
+                        </svg>
+                        <div class="text">
+                            Дать задание копирайтеру сформировать макет презентации нового проекта до определенного
+                            числа.
+                        </div>
+                        <svg class="icon-delete" viewBox="0 0 21 21" width="21px" height="21px">
+                            <use xlink:href="#delete_1" />
+                        </svg>
+                    </li>
+                    <li class="task">
+                        <svg class="icon-arrow" viewBox="0 0 21 21" width="21px" height="21px">
+                            <use xlink:href="#arrow_1" />
+                        </svg>
+                        <div class="text">
+                            Поставить перед верстальщиком задачу разработать макет мобильной версии сайта до конца
+                            месяца.
+                        </div>
+                        <svg class="icon-delete" viewBox="0 0 21 21" width="21px" height="21px">
+                            <use xlink:href="#delete_1" />
+                        </svg>
+                    </li>
+                    <li class="task">
+                        <svg class="icon-arrow" viewBox="0 0 21 21" width="21px" height="21px">
+                            <use xlink:href="#arrow_1" />
+                        </svg>
+                        <div class="text">
+                            Дать задачу аналитику подготовить статистику посещаемости официального сайта компании за
+                            месяц.
+                        </div>
+                        <svg class="icon-delete" viewBox="0 0 21 21" width="21px" height="21px">
+                            <use xlink:href="#delete_1" />
+                        </svg>
+                    </li>
+                    <li class="task">
+                        <svg class="icon-arrow" viewBox="0 0 21 21" width="21px" height="21px">
+                            <use xlink:href="#arrow_1" />
+                        </svg>
+                        <div class="text">
+                            Утвердить список с вопросами для менеджера.
+                        </div>
+                        <svg class="icon-delete" viewBox="0 0 21 21" width="21px" height="21px">
+                            <use xlink:href="#delete_1" />
+                        </svg>
+                    </li>
+                    <li class="task">
+                        <svg class="icon-arrow" viewBox="0 0 21 21" width="21px" height="21px">
+                            <use xlink:href="#arrow_1" />
+                        </svg>
+                        <div class="text">
+                            Поручение менеджеру по продажам проведение опроса для постоянных клиентов до конца недели.
+                        </div>
+                        <svg class="icon-delete" viewBox="0 0 21 21" width="21px" height="21px">
+                            <use xlink:href="#delete_1" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+            <div class="add-task">
+                <svg class="icon-add" viewBox="0 0 25 25" width="25px" height="25px">
+                    <use xlink:href="#add_1" />
+                </svg>
+                <input type="text" id="input" placeholder="Добавить задачу">
+            </div>
+        </div>
+    </div>
+
+    <svg style="display:none">
+        <symbol version="1.1" id="add_1" class="add-icon" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490 490" xml:space="preserve"
+            fill="currentColor">
+            <path class="add-icon" fill="currentColor" d="M227.8,174.1v53.7h-53.7c-9.5,0-17.2,7.7-17.2,17.2s7.7,17.2,17.2,17.2h53.7v53.7c0,9.5,7.7,17.2,17.2,17.2
+            	s17.1-7.7,17.1-17.2v-53.7h53.7c9.5,0,17.2-7.7,17.2-17.2s-7.7-17.2-17.2-17.2h-53.7v-53.7c0-9.5-7.7-17.2-17.1-17.2
+            	S227.8,164.6,227.8,174.1z" />
+            <path class="add-icon" fill="currentColor" d="M71.7,71.7C25.5,118,0,179.5,0,245s25.5,127,71.8,173.3C118,464.5,179.6,490,245,490s127-25.5,173.3-71.8
+            	C464.5,372,490,310.4,490,245s-25.5-127-71.8-173.3C372,25.5,310.5,0,245,0C179.6,0,118,25.5,71.7,71.7z M455.7,245
+            	c0,56.3-21.9,109.2-61.7,149s-92.7,61.7-149,61.7S135.8,433.8,96,394s-61.7-92.7-61.7-149S56.2,135.8,96,96s92.7-61.7,149-61.7
+            	S354.2,56.2,394,96S455.7,188.7,455.7,245z" />
+        </symbol>
+        <symbol version="1.1" id="arrow_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+            <path fill="currentColor" d="M28.373,13.546c-0.803-0.758-2.068-0.722-2.827,0.081c-0.758,0.803-0.722,2.069,0.081,2.827L42.087,32l-16.46,15.546
+        		c-0.803,0.758-0.839,2.024-0.081,2.827C25.939,50.79,26.469,51,27,51c0.493,0,0.986-0.181,1.373-0.546l18-17
+        		C46.773,33.076,47,32.55,47,32s-0.227-1.076-0.627-1.454L28.373,13.546z" />
+            <path fill="currentColor" d="M32,0C23.453,0,15.417,3.329,9.374,9.373C3.329,15.417,0,23.453,0,32s3.33,16.583,9.374,22.626
+        		C15.417,60.671,23.453,64,32,64s16.583-3.329,22.626-9.373C60.671,48.583,64,40.547,64,32s-3.33-16.583-9.374-22.626
+        		C48.583,3.329,40.547,0,32,0z M51.797,51.798C46.509,57.087,39.479,60,32,60s-14.509-2.913-19.798-8.202C6.913,46.51,4,39.479,4,32
+        		s2.913-14.51,8.203-19.798C17.491,6.913,24.521,4,32,4s14.509,2.913,19.798,8.202C57.087,17.49,60,24.521,60,32
+        		S57.087,46.51,51.797,51.798z" />
+        </symbol>
+        <symbol version="1.1" id="delete_1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64"
+            enable-background="new 0 0 64 64" xml:space="preserve">
+            <path fill="currentColor" d="M17.586,46.414C17.977,46.805,18.488,47,19,47s1.023-0.195,1.414-0.586L32,34.828l11.586,11.586
+        		C43.977,46.805,44.488,47,45,47s1.023-0.195,1.414-0.586c0.781-0.781,0.781-2.047,0-2.828L34.828,32l11.586-11.586
+        		c0.781-0.781,0.781-2.047,0-2.828c-0.781-0.781-2.047-0.781-2.828,0L32,29.172L20.414,17.586c-0.781-0.781-2.047-0.781-2.828,0
+        		c-0.781,0.781-0.781,2.047,0,2.828L29.172,32L17.586,43.586C16.805,44.367,16.805,45.633,17.586,46.414z" />
+            <path fill="currentColor" d="M32,64c8.547,0,16.583-3.329,22.626-9.373C60.671,48.583,64,40.547,64,32s-3.329-16.583-9.374-22.626
+        		C48.583,3.329,40.547,0,32,0S15.417,3.329,9.374,9.373C3.329,15.417,0,23.453,0,32s3.329,16.583,9.374,22.626
+        		C15.417,60.671,23.453,64,32,64z M12.202,12.202C17.49,6.913,24.521,4,32,4s14.51,2.913,19.798,8.202C57.087,17.49,60,24.521,60,32
+        		s-2.913,14.51-8.202,19.798C46.51,57.087,39.479,60,32,60s-14.51-2.913-19.798-8.202C6.913,46.51,4,39.479,4,32
+        		S6.913,17.49,12.202,12.202z" />
+        </symbol>
+        <symbol version="1.1" id="trash_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+            <path fill="currentColor" d="M39,0H25c-1.104,0-2,0.896-2,2v6H10c-1.104,0-2,0.896-2,2s0.896,2,2,2h2v50c0,1.104,0.896,2,2,2h36c1.104,0,2-0.896,2-2V12
+        		h2c1.104,0,2-0.896,2-2s-0.896-2-2-2H41V2C41,0.896,40.104,0,39,0z M48,12v48H16V12H48z M27,8V4h10v4H27z" />
+            <path fill="currentColor"
+                d="M26,56c1.104,0,2-0.896,2-2V20c0-1.104-0.896-2-2-2s-2,0.896-2,2v34C24,55.104,24.896,56,26,56z" />
+            <path fill="currentColor"
+                d="M38,56c1.104,0,2-0.896,2-2V20c0-1.104-0.896-2-2-2s-2,0.896-2,2v34C36,55.104,36.896,56,38,56z" />
+        </symbol>
+    </svg>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
