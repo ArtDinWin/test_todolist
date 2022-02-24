@@ -166,3 +166,15 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
 }
+li.finish div.text {
+  text-decoration: line-through;
+  color: #ccc;
+}
+li.finish .icon-arrow {
+  transform: rotate(87deg);
+  color: #ccc;
+}
+li.finish .icon-arrow:hover {
+  transform: rotate(0deg);
+  color: #00c78b;
+}
