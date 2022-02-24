@@ -7,7 +7,7 @@ let itemList = document.getElementById("list"); // Список ul задач
 
 taskElem.addEventListener("submit", addTask); // событие по submit (подтвердить новую задачу)
 iconAdd.addEventListener("click", addTask); //  событие по кнопке добавить новую задачу
-itemList.addEventListener("click", removeItem); // событие удалить задачу
+itemList.addEventListener("click", removeTask); // событие удалить задачу
 
 // Функция добавления новой задачи в список
 function addTask(e) {
@@ -48,8 +48,23 @@ function addElemHTML(taskText) {
   svgDelete.setAttribute("viewBox", "0 0 21 21");
   svgDelete.setAttribute("width", "21");
   svgDelete.setAttribute("height", "21");
+  svgDelete.dataset.action = "delete";
   useDelete.setAttributeNS(xlinkns, "href", "#delete_1");
   svgDelete.appendChild(useDelete);
   newElement.appendChild(svgDelete);
   itemList.prepend(newElement);
+}
+
+// Функция удаления задачи
+function removeTask(e) {
+  if (
+    e.target.hasAttribute("data-action") &&
+    e.target.getAttribute("data-action") == "delete"
+  ) {
+    let taskName = e.target.parentElement.querySelector("div").innerText;
+
+    if (confirm(`Удалить задачу: ${taskName}?`)) {
+      e.target.parentNode.remove();
+    }
+  }
 }
